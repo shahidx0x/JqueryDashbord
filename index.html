@@ -8,41 +8,65 @@
         .content-auto {
           content-visibility: auto;
         }
+        .sideNavLink {
+          @apply bg-navgreen text-white font-medium;
+        }
       }
     </style>
     <title>Document</title>
   </head>
-  <body> 
-      <div class="flex">
-        <aside class="bg-white px-10 w-1/6 py-4 h-screen border-gray-300 border-r">
-          <!-- Side Navbar content -->
-          <div class="flex justify-between">
-            <img src="./assets/image/After the school bell logo 2.png" alt="" srcset="">
-            <img src="./assets/image/chevron-selector-horizontal.svg" alt="">
-          </div>
-          <ul class="space-y-2">
-            <li><a href="#dashboard" class="block px-4 py-2 rounded hover:bg-gray-300" id="dashboard-link">Dashboard</a></li>
-            <li><a href="#profile" class="block px-4 py-2 rounded hover:bg-gray-300" id="profile-link">Profile</a></li>
-            <li><a href="#settings" class="block px-4 py-2 rounded hover:bg-gray-300" id="settings-link">Settings</a></li>
-          </ul>
-          
-        </aside>
-    
-        <main class="flex-1 bg-white">
-            <header class="bg-white text-white py-7 px-7 border-gray-300 border-b">
-                <div class="container mx-auto">
-                  <!-- Top Navbar content -->
-                  <h1 class="text-2xl font-bold text-[#111927]">Hello, Charlie 👋</h1>
-                </div>
-              </header>
-          <!-- Content will change here based on the selected route -->
-          <div id="content">
-       
-            <h2 class="text-2xl font-bold">Welcome to Dashboard!</h2>
-          </div>
-        </main>
-      </div>
+  <body>
+    <div class="flex">
+      <aside
+        class="bg-white px-7 w-1/6 py-4 h-screen border-gray-300 border-r"
+      >
+        <!-- Side Navbar content -->
+        <div class="flex justify-between">
+          <img
+            src="./assets/image/After the school bell logo 2.png"
+            alt=""
+            srcset=""
+          />
+          <img src="./assets/image/chevron-selector-horizontal.svg" alt="" />
+        </div>
+        <ul class="space-y-2 pt-10">
+          <li>
+            <a
+              href="#dashboard"
+              class="block px-4 py-2 rounded"
+              id="dashboard-link"
+              >Dashboard</a
+            >
+          </li>
+          <li>
+            <a href="#profile" class="block px-4 py-2 rounded" id="profile-link"
+              >Profile</a
+            >
+          </li>
+          <li>
+            <a
+              href="#settings"
+              class="block px-4 py-2 rounded"
+              id="settings-link"
+              >Settings</a
+            >
+          </li>
+        </ul>
+      </aside>
 
+      <main class="flex-1 bg-white">
+        <header class="bg-white text-white py-7 px-7 border-gray-300 border-b">
+          <div class="container mx-auto">
+            <!-- Top Navbar content -->
+            <h1 class="text-2xl font-bold text-[#111927]">Hello, Charlie 👋</h1>
+          </div>
+        </header>
+        <!-- Content will change here based on the selected route -->
+        <div id="content">
+          <h2 class="text-2xl font-bold">Welcome to Dashboard!</h2>
+        </div>
+      </main>
+    </div>
 
     <!-- the script file start from here -->
     <script src="js/jquery.min.js"></script>

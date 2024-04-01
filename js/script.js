@@ -15,22 +15,21 @@ function handleNavigation() {
   const links = document.querySelectorAll("a");
 
   links.forEach((link) => {
-    link.classList.remove("bg-navgreen");
+    link.classList.remove("sideNavLink");
   });
 
- 
   switch (hash) {
     case "#dashboard":
-      loadContent("dashboard.html");
-      document.getElementById("dashboard-link").classList.add("bg-navgreen");
+      loadContent("../dashbord/dashbord.html");
+      document.getElementById("dashboard-link").classList.add("sideNavLink");
       break;
     case "#profile":
       loadContent("profile.html");
-      document.getElementById("profile-link").classList.add("bg-navgreen");
+      document.getElementById("profile-link").classList.add("sideNavLink");
       break;
     case "#settings":
       loadContent("settings.html");
-      document.getElementById("settings-link").classList.add("bg-navgreen");
+      document.getElementById("settings-link").classList.add("sideNavLink");
       break;
     default:
       loadContent("dashbord.html");
