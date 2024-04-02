@@ -12,42 +12,49 @@ function loadContent(htmlFile) {
 
 $(function () {
   loadContent("../dashbord/dashbord.html");
-  document.getElementById("dashboard-link").classList.add("sideNavLink");
+  $("dashboard-link").classList.add("sideNavLink");
 });
 
 function handleNavigation() {
   const hash = window.location.hash;
-  const links = document.querySelectorAll("a");
-
-  links.forEach((link) => {
-    link.classList.remove("sideNavLink");
-  });
+  $("a").removeClass("sideNavLink");
 
   switch (hash) {
     case "#dashboard":
       loadContent("../dashbord/dashbord.html");
-      document.getElementById("dashboard-link").classList.add("sideNavLink");
+      $("#dashboard-link").addClass("sideNavLink");
+
       break;
-    case "#profile":
-      loadContent("profile.html");
-      document.getElementById("profile-link").classList.add("sideNavLink");
+    case "#schedule":
+      loadContent("../dashbord/schedule.html");
+      $("#schedule-link").addClass("sideNavLink");
+
       break;
-    case "#settings":
-      loadContent("settings.html");
-      document.getElementById("settings-link").classList.add("sideNavLink");
+    case "#messages":
+      loadContent("../dashbord/messages.html");
+      $("#message-link").addClass("sideNavLink");
+
+      break;
+    case "#students":
+      loadContent("../dashbord/students.html");
+      $("#settings-link").addClass("sideNavLink");
+
       break;
     default:
       loadContent("dashbord.html");
   }
 }
 
-window.addEventListener("DOMContentLoaded", handleNavigation);
-window.addEventListener("hashchange", handleNavigation);
-
-const sidebarHide = document.getElementById("hideme");
-const sidebar = document.getElementById("sidebar");
-
-sidebarHide.addEventListener("click", function () {
-  sidebar.classList.add("hidden");
+$(document).ready(function () {
+  handleNavigation();
 });
 
+$(window).on("hashchange", handleNavigation);
+
+// sidebar show hide for the responsive design
+
+$(function () {
+  $("#hideme").click(function () {
+    $("#sidebar").addClass("hidden");
+  });
+});

@@ -12,6 +12,9 @@
         .sideNavLink {
           @apply bg-navgreen text-white font-medium;
         }
+        .svg-black {
+          filter: invert(100%);
+        }
       }
     </style>
     <title>Document</title>
@@ -20,7 +23,7 @@
     <div class="flex">
       <aside
         id="sidebar"
-        class="bg-white px-7 w-1/6 py-4 h-screen border-gray-300 border-r"
+        class="px-7 w-1/6 py-4 h-screen border-gray-300 border-r"
       >
         <!-- Side Navbar content -->
         <div class="flex justify-between">
@@ -37,25 +40,44 @@
           />
         </div>
         <ul class="space-y-2 pt-10">
-          <li>
+          <li class="">
             <a
               href="#dashboard"
-              class="block px-4 py-2 rounded"
+              class="block px-4 py-2 rounded flex gap-3"
               id="dashboard-link"
-              >Dashboard</a
             >
-          </li>
-          <li>
-            <a href="#profile" class="block px-4 py-2 rounded" id="profile-link"
-              >Profile</a
+              <img class="svg-black" src="./assets/image/home-line.svg" alt="" />
+              Dashboard</a
             >
           </li>
           <li>
             <a
-              href="#settings"
-              class="block px-4 py-2 rounded"
-              id="settings-link"
-              >Settings</a
+            href="#schedule"
+            class="block px-4 py-2 rounded flex gap-3"
+            id="schedule-link"
+          >
+            <img class="svg-black" src="./assets/image/home-line.svg" alt="" />
+            Schedule</a
+          >
+          </li>
+          <li>
+            <a
+            href="#messages"
+            class="block px-4 py-2 rounded flex gap-3"
+            id="messages-link"
+          >
+            <img class="svg-black" src="./assets/image/home-line.svg" alt="" />
+            Messages</a
+          >
+          </li>
+          <li >
+            <a
+              href="#students"
+              class="block px-4 py-2 rounded flex gap-3"
+              id="students-link"
+            >
+              <img class="svg-black" src="./assets/image/home-line.svg" alt="" />
+              Students</a
             >
           </li>
         </ul>
@@ -75,7 +97,7 @@
         </header>
         <!-- Content will change here based on the selected route -->
         <div id="content">
-          <h2 class="text-2xl font-bold">Welcome to Dashboard!</h2>
+          <!-- the locally fetched html will be renderd here -->
         </div>
       </main>
     </div>
