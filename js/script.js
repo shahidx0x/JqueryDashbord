@@ -10,6 +10,11 @@ function loadContent(htmlFile) {
     });
 }
 
+$(function () {
+  loadContent("../dashbord/dashbord.html");
+  document.getElementById("dashboard-link").classList.add("sideNavLink");
+});
+
 function handleNavigation() {
   const hash = window.location.hash;
   const links = document.querySelectorAll("a");
@@ -38,3 +43,11 @@ function handleNavigation() {
 
 window.addEventListener("DOMContentLoaded", handleNavigation);
 window.addEventListener("hashchange", handleNavigation);
+
+const sidebarHide = document.getElementById("hideme");
+const sidebar = document.getElementById("sidebar");
+
+sidebarHide.addEventListener("click", function () {
+  sidebar.classList.add("hidden");
+});
+

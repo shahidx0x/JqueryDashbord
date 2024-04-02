@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/global.css" />
     <style type="text/tailwindcss">
       @layer utilities {
         .content-auto {
@@ -18,6 +19,7 @@
   <body>
     <div class="flex">
       <aside
+        id="sidebar"
         class="bg-white px-7 w-1/6 py-4 h-screen border-gray-300 border-r"
       >
         <!-- Side Navbar content -->
@@ -27,7 +29,12 @@
             alt=""
             srcset=""
           />
-          <img src="./assets/image/chevron-selector-horizontal.svg" alt="" />
+          <img
+            id="hideme"
+            class="cursor-pointer"
+            src="./assets/image/chevron-selector-horizontal.svg"
+            alt=""
+          />
         </div>
         <ul class="space-y-2 pt-10">
           <li>
@@ -56,9 +63,14 @@
 
       <main class="flex-1 bg-white">
         <header class="bg-white text-white py-7 px-7 border-gray-300 border-b">
-          <div class="container mx-auto">
+          <div class="container mx-auto flex justify-between">
             <!-- Top Navbar content -->
-            <h1 class="text-2xl font-bold text-[#111927]">Hello, Charlie 👋</h1>
+            <div class="flex gap-10">
+              <span class="text-2xl font-bold text-[#111927]">x</span>
+              <h1 class="text-2xl font-bold text-[#111927]">
+                Hello, Charlie 👋
+              </h1>
+            </div>
           </div>
         </header>
         <!-- Content will change here based on the selected route -->
