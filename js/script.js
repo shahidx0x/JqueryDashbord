@@ -14,8 +14,18 @@ function loadContent(htmlFile) {
 function handleNavigation() {
   // getting current hash
   const hash = window.location.hash;
+  if (hash === "#dashboard") {
+    $("#header-message").text("Hello, Charlie 👋");
+  } else {
+    $("#header-message").text(
+      hash.split("#")[1].charAt(0).toUpperCase() +
+        hash.split("#")[1].slice(1).toLowerCase()
+    );
+  }
+
   // removing selected green classs to route changes
   $("a").removeClass("sideNavLink");
+
   // toggoling through the current hash and rendering content conditionally
 
   switch (hash) {
@@ -31,12 +41,12 @@ function handleNavigation() {
       break;
     case "#messages":
       loadContent("../dashbord/messages.html");
-      $("#message-link").addClass("sideNavLink");
+      $("#messages-link").addClass("sideNavLink");
 
       break;
     case "#students":
       loadContent("../dashbord/students.html");
-      $("#settings-link").addClass("sideNavLink");
+      $("#students-link").addClass("sideNavLink");
 
       break;
     default:
