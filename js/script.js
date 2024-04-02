@@ -1,3 +1,4 @@
+// load the html file
 function loadContent(htmlFile) {
   fetch(htmlFile)
     .then((response) => response.text())
@@ -10,14 +11,12 @@ function loadContent(htmlFile) {
     });
 }
 
-$(function () {
-  loadContent("../dashbord/dashbord.html");
-  $("dashboard-link").classList.add("sideNavLink");
-});
-
 function handleNavigation() {
+  // getting current hash
   const hash = window.location.hash;
+  // removing selected green classs to route changes
   $("a").removeClass("sideNavLink");
+  // toggoling through the current hash and rendering content conditionally
 
   switch (hash) {
     case "#dashboard":
@@ -46,6 +45,8 @@ function handleNavigation() {
 }
 
 $(document).ready(function () {
+  // trigger to dashbord route when the dom is ready
+  window.location.hash = "#dashboard";
   handleNavigation();
 });
 
